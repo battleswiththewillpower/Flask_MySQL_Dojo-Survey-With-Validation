@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Survey</title>
+</head>
+
+<body>
+
+    <div class="container-md p-5">
+        <!-- {% for choice in language %}
+                {{choice['language']}}
+                {% endfor %} -->
+        <h1>Dojo Survey</h1>
+        
+
+            <form action='/users' method='post'>
+                <div class="">
+
+                    <label for='name'>Name:</label>
+                    <input type='text' name='name'><br><br>
+                </div>
+
+                <div class="">
+                    <label for='location'>Location</label>
+                    <input type='text' name='location'><br><br>
+
+                </div>
+
+            
+
+        <div class="">
+            
+                <input type="checkbox" id="py" name="language" value="Python">
+                <label for="language"> Python</label><br>
+                <input type="checkbox" id="js" name="language" value="Javascript">
+                <label for="language"> Javascript</label><br>
+                <input type="checkbox" id="java" name="language" value="Java">
+                <label for="language"> Java</label><br>
+                <input type="checkbox" id="mern" name="language" value="Mern">
+                <label for="language"> Mern</label><br><br>
+
+            <!-- <label for="language">Favorite Language:</label>
+            <select name="language" id="favLang">
+                <option value="py">Python</option>
+                <option value="js">Javascript</option>
+                <option value="java">Java</option>
+                <option value="mern">Mern</option>
+            </select> -->
+        
+        </div>
+
+        <label for="comment">Comment(optional):</label>
+        <div class="">
+            <textarea id="comment" name="comment" rows="4" cols="50">
+
+    </textarea><br><br>
+        </div>
+        <div class="">
+            <!-- <input type='text' name='information'> -->
+            <input type='submit' value='Submit Here'>
+            </form>
+
+            {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
